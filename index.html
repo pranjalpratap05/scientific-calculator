@@ -5,9 +5,48 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scientific Calculator</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+p{
+    font-size: 20px;     /* paragraph text size */
+    margin-bottom: 80px; /* gap between paragraphs */
+    margin-left: 50px  ;    
+}
+p1{
+  margin-left: 700px;
+  font-size: 20px;
+}
+p2{
+  font-size: 20px;
+  margin-left: 50px ;
+    margin-bottom: 100px;
+  }
+h1{
+  margin-bottom : 80px;
+  text-align: center;
+}
+</style>
 </head>
 <body>
   <h1>Scientific Calculator</h1>
+  <p>Enter the first number: 
+  <input id="num1" type="number" placeholder="Enter a number"></p>
+  <p1>Choose operation: 
+<select id="operation">
+    <option value="+">Addition</option>
+    <option value="-">Subtraction</option>
+    <option value="*">multiplication</option>
+    <option value="/">Division</option>
+    
+</select> </p1>
+
+<button onclick="calculate()">CALCULATE</button>
+  <p>Enter the second number :    
+  <input id="num2" type="number" placeholder="Enter a number"></p>
+  <p2> ANSWER: </p2><p2 id="answer"></p2>
+  <style>
+  </style>
+  
   <script src="script.js"></script>
+  
 </body>
 </html>
