@@ -1,29 +1,76 @@
-function calculate(){
+let moreButton = document.getElementById("more-btn");
+let moreSelect = document.getElementById("more-select");
+moreButton.addEventListener('click', () => {
+    moreSelect.style.display = 'inline-block';
+});
 
-    let num1 = Number(document.getElementById("num1").value);
+// Get the display input
+const resultInput = document.getElementById('result');
 
-    let num2 = Number(document.getElementById("num2").value);
+// Get all buttons
+const allButtons = document.querySelectorAll('.button');
 
-    let operation = document.getElementById("operation").value;
-
-    let result;
-
-    if(operation == "+"){
-        result = num1 + num2;
+// Add click listener to each button
+allButtons.forEach(button => {
+  button.addEventListener('click', (e) => {
+    const buttonText = button.textContent.trim();
+    
+    // Skip special buttons (X, =, MORE, C)
+    if (buttonText === 'X' || buttonText === '=' || buttonText === 'MORE' || buttonText === 'C') {
+      return;
     }
 
-    else if(operation == "-"){
-        result = num1 - num2;
-    }
+    // Append number or operator to display
+    resultInput.value += buttonText;
+  });
+});
 
-    else if(operation == "*"){
-        result = num1 * num2;
-    }
+// C button - Clear all
+const cButton = document.querySelector('.button-C');
+cButton.addEventListener('click', () => {
+  resultInput.value = '';
+});
 
-    else if(operation == "/"){
-        result = num1 / num2;
-    }
+// X button - Delete last character
+const xButton = document.querySelector('.button-X');
+xButton.addEventListener('click', () => {
+  resultInput.value = resultInput.value.slice(0, -1);
+});
 
-    document.getElementById("answer").innerHTML =
-    result;
-}
+// Dropdown selection - Append function to display
+moreSelect.addEventListener('change', (e) => {
+  resultInput.value += e.target.value + '(';
+});
+
+
+// = button - Calculate result
+// = button - Calculate result
+const eqButton = document.querySelector('.button-eq');
+eqButton.addEventListener('click', () => {
+  try {
+    let expression = resultInput.value;
+    
+    // Replace sin, cos, tan, log with Math functions
+    expression = expression.replace(/sin\(/g, 'Math.sin(');
+    expression = expression.replace(/cos\(/g, 'Math.cos(');
+    expression = expression.replace(/tan\(/g, 'Math.tan(');
+    expression = expression.replace(/log\(/g, 'Math.log10(');
+    
+    // Convert degrees to radians (multiply by Math.PI/180)
+    expression = expression.replace(/Math\.sin\(([^)]+)\)/g, 'Math.sin($1*Math.PI/180)');
+    expression = expression.replace(/Math\.cos\(([^)]+)\)/g, 'Math.cos($1*Math.PI/180)');
+    expression = expression.replace(/Math\.tan\(([^)]+)\)/g, 'Math.tan($1*Math.PI/180)');
+    
+    // Evaluate the expression
+    const result = eval(expression);
+    
+    // Check if result is valid
+    if (isNaN(result) || !isFinite(result)) {
+      resultInput.value = 'ERROR';
+    } else {
+      resultInput.value = result;
+    }
+  } catch (error) {
+    resultInput.value = 'ERROR';
+  }
+});

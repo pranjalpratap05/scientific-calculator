@@ -5,46 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Scientific Calculator</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-p{
-    font-size: 20px;     /* paragraph text size */
-    margin-bottom: 80px; /* gap between paragraphs */
-    margin-left: 50px  ;    
-}
-p1{
-  margin-left: 700px;
-  font-size: 20px;
-}
-p2{
-  font-size: 20px;
-  margin-left: 50px ;
-    margin-bottom: 100px;
-  }
-h1{
-  margin-bottom : 80px;
-  text-align: center;
-}
-</style>
+  
 </head>
 <body>
-  <h1>Scientific Calculator</h1>
-  <p>Enter the first number: 
-  <input id="num1" type="number" placeholder="Enter a number"></p>
-  <p1>Choose operation: 
-<select id="operation">
-    <option value="+">Addition</option>
-    <option value="-">Subtraction</option>
-    <option value="*">multiplication</option>
-    <option value="/">Division</option>
-    
-</select> </p1>
-
-<button onclick="calculate()">CALCULATE</button>
-  <p>Enter the second number :    
-  <input id="num2" type="number" placeholder="Enter a number"></p>
-  <p2> ANSWER: </p2><p2 id="answer"></p2>
-  <style>
-  </style>
+  <h1 class =" heading">Scientific Calculator</h1>
+  <align="center">  
+  <div class="content">
+    <div class="display" id="display">
+      <input type="text" id="result" readonly>
+    </div>
+    <div>
+      <select id="more-select" class="more-select">
+        <option value="sin">sin</option>
+        <option value="cos">cos</option>  
+         <option value="tan">tan</option>
+        <option value="log">log</option>
+      </select>
+    </div>
+    <div>
+      <button class=" button button-X">X</button>
+      <button class=" button button-eq">=</button>
+      <button class=" button button-more" id="more-btn">MORE</button>
+    </div>
+    <div>
+      <button class=" button">0</button>
+      <button class=" button">.</button>
+      <button class=" button button-C">C</button>
+      <button class=" button button-minus">-</button>
+    </div>
+    <div>
+      <button class=" button">7</button>
+      <button class=" button">8</button>
+      <button class=" button">9</button>
+      <button class=" button button-same">/</button>
+    </div>
+    <div>
+      <button class=" button">4</button>
+      <button class=" button">5</button>
+      <button class=" button">6</button>
+      <button class=" button button-A">+</button>
+    </div>
+    <div>
+      <button class="button " >1 </button>
+      <button class="button">2</button>
+      <button class="button">3</button> 
+      <button class=" button button-same">*</button>  
+    </div>
+  </div>
+  
   
   <script src="script.js"></script>
   

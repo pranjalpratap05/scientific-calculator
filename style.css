@@ -1,7 +1,82 @@
-body{
-    background-image: url("https://as2.ftcdn.net/v2/jpg/01/27/10/27/1000_F_127102793_T3xjCOEUKV5vy3WgNMxpDRnEMSFFHh5b.jpg");
-    background-size: cover;
-    #answer {
-  color: white;
+body {
+  background-image: url("https://as2.ftcdn.net/v2/jpg/01/27/10/27/1000_F_127102793_T3xjCOEUKV5vy3WgNMxpDRnEMSFFHh5b.jpg");
+  background-size: cover;
 }
+
+.content {
+  margin-top: 100px; /* control vertical position without changing document flow */
+  margin-left: 600px;
+  display: inline-block;
+  background-color: black;
+  padding: 20px;
+}
+.heading{
+  text-align: center;
+  font-size: 60px;
+}   
+
+.button {
+  background-color: rgb(60, 60, 64);   /* button color */
+  color: white;             /* text color */
+  padding: 15px 30px;       /* size inside button */
+  font-size: 18px;          /* text size */
+  border: none;             /* remove border */
+  border-radius: 10px;      /* rounded corners */
+  cursor: pointer;      /* hand cursor */
+  margin: 2px ;
+  width: 70px;
+ 
+}
+.button:hover {
+  background-color: rgb(80, 80, 84);   /* darker on hover */
+}
+
+.display input {
+  width: 300px;           /* width of display */
+  height: 50px;           /* height of display */
+  font-size: 24px;        /* text size in display */
+  margin-bottom: 20px; 
+  background-color: rgb(60, 60, 64);   /* space below display */
+  text-align: right;      /* align text to the right */
+  color: white;          /* text color in display */
+  border: none;         /* remove border */
+}
+
+.button-C{
+  background-color: rgb(255, 0, 0);   /* button color */
+}
+.button-C:hover{
+  background-color: rgba(186, 17, 17, 0.355);   /* button color */
+}
+
+.button-A{
+   background-color: rgb(113, 146, 149);
+}
+.button-eq{
+  background-color: rgb(0, 128, 0);   /* button color */
+}
+.button-more{
+  background-color: rgb(15, 0, 128);   /* button color */
+  width: 145px;
+}
+.button-same{
+  background-color: rgb(113, 146, 149);
+}
+.button-minus{
+  background-color: rgb(113, 146, 149);
+}
+.button-X{
+  background-color: rgb(107, 51, 46);
+}
+
+.more-select {
+  display: none;
+  width: 300px;
+  height: 30px;
+  background-color: rgb(60, 60, 64);
+  color: white;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  text-align: center;
+  font-size: 18px;
 }
